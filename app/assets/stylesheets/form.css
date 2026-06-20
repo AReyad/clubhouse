@@ -1,0 +1,33 @@
+.form-wrapper {
+ margin-top: 10vh;
+}
+
+.form-wrapper h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.field input,textarea {
+  background-color: inherit;
+  border: 1px solid grey;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.form-wrapper textarea {
+  padding: 2rem 1rem;
+}
+
+.actions > input[type="submit"] {
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+ * {
+  padding: 0;
+  margin: 0;
+  color: inherit;
+ }
+
+ .wrapper {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: white;
+ }
+
+ body {
+  background-color: #0D1117;
+ }
+
+.nav-items-container, .nav-items-container > ul {
+  background-color: black;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+li, a {
+  color: inherit;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  border-top: 1px solid #212223;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.new-post {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.post {
+  max-width: 300px;
+  overflow-wrap: break-word;
+}
+
+.button {
+  background-color: orange;
+  padding: 10px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  transition: 100ms ease-out all;
+}
+
+.button:active {
+  scale: 0.9;
+}
+
+.button:hover, .link:hover {
+  opacity: 75%;
+}
+.link {
+  text-align: center;
+  text-decoration: underline;
+  transition: 100ms ease-out opacity;
+}
