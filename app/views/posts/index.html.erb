@@ -1,0 +1,19 @@
+
+<% if user_signed_in? %>
+ <%= link_to "Create a new post", new_post_path, class: "new-post button" %>
+<% end %>
+
+<br>
+<% @posts.each do |post| %>
+<div class="post">
+<p><%= post.title %></p>
+<br>
+<p><%= post.content %></p>
+<br>
+<% if user_signed_in? %>
+<p>Written by: <%= post.user.name %></p>
+<% else %>
+<%= link_to "Sign in to view post author", sign_in_path, class: "link" %>
+<% end %>
+</div>
+<% end %>

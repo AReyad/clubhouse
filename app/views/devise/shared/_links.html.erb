@@ -1,0 +1,8 @@
+<%- if controller_name != 'sessions' %>
+  <p class="link"><%= link_to "Have an account? Log in", sign_in_path %></p>
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <p class="link"><%= link_to "Don't have an account? Sign up", sign_up_path %></p>
+<% end %>
+
