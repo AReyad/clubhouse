@@ -17,13 +17,12 @@
 }
 
 .form-wrapper textarea {
-  padding: 2rem 1rem;
+  min-height: 150px;
 }
 
 .actions > input[type="submit"] {
   border: none;
   margin-bottom: 10px;
-  border-radius: 5px;
 }
 
 .actions {
