@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Clubhouse" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Clubhouse">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+  <div class="wrapper">
+    <nav class="nav-bar">
+     <div class="nav-items-container">
+        <h1 class="page-title"><%= link_to "Clubhouse", root_path%></h1>
+        <ul>
+          <% unless user_signed_in? %>
+          <li><%= link_to "Sign in", sign_in_path %></li>
+          <li class="button"><%= link_to "Create an account", sign_up_path %></li>
+          <% else %>
+          <li><%= link_to "Sign out", sign_out_path, class: "button", data: { turbo: false } %></li>
+           <% end %>
+        </ul>
+     </div>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%=link_to "https://github.com/areyad" do %>
+      <%= image_tag "github.svg", class: "icon", alt: "Reyad's github", title: "Reyad's github"%>
+      <% end %>
+    </footer>
+    </div>
+  </body>
+</html>
