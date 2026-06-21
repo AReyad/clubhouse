@@ -3,6 +3,10 @@
  <%= link_to "Create a new post", new_post_path, class: "new-post button" %>
 <% end %>
 
+<% if @posts.empty? %>
+ <h2 class="empty-posts">No posts to view.</h2>
+ <% end %>
+
 <br>
 <% @posts.reverse_each do |post| %>
 <div class="post">

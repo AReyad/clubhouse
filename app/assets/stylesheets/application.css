@@ -113,3 +113,6 @@ footer {
   transition: 100ms ease-out opacity;
 }
 
+.empty-posts {
+  margin-top: 1rem;
+}
