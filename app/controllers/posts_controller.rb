@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [ :new, :create ]
 
   def new
     @post = Post.new
@@ -15,12 +15,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse_order
   end
 
   private
 
   def post_params
-    params.expect(post: [:title, :content])
+    params.expect(post: [ :title, :content ])
   end
 end
