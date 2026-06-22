@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.reverse_order
+    @posts = Post.all.includes(:user).reverse_order
   end
 
   private
